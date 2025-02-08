@@ -1,0 +1,40 @@
+@EmployeeManagerAPI_HostAddress = https://localhost:7130
+
+POST {{EmployeeManagerAPI_HostAddress}}/api/employee
+Content-Type: application/json
+
+{
+  "Id": 1,
+  "Name": "Happy McHappyson",
+  "Salary": 100000.00,
+  "Address": "1 Sunny Lane",
+  "City": "Happyville",
+  "Region": "The Joyful Mountains",
+  "PostalCode": "1234565",
+  "Country": "Laughland",
+  "Phone": "876542-2345-3242-234"
+}
+
+###
+
+@id=1
+GET {{EmployeeManagerAPI_HostAddress}}/api/employee/{{id}}
+
+###
+
+PUT {{EmployeeManagerAPI_HostAddress}}/api/employee
+Content-Type: application/json
+
+{
+  "Id": 1,
+  "Name": "Salman Farsi",
+  "Salary": 100000.00,
+  "Address": "1 Sunny Lane",
+  "City": "Happyville",
+  "Region": "The Joyful Mountains",
+  "PostalCode": "1234565",
+  "Country": "Laughland",
+  "Phone": "248-835-5286"
+}
+
+###
