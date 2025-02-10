@@ -4,9 +4,9 @@ POST {{EmployeeManagerAPI_HostAddress}}/api/employee
 Content-Type: application/json
 
 {
-  "Id": 1,
+  "Id": 2,
   "Name": "Happy McHappyson",
-  "Salary": 100000.00,
+  "Salary": 200000.00,
   "Address": "1 Sunny Lane",
   "City": "Happyville",
   "Region": "The Joyful Mountains",
@@ -33,8 +33,28 @@ Content-Type: application/json
   "City": "Happyville",
   "Region": "The Joyful Mountains",
   "PostalCode": "1234565",
-  "Country": "Laughland",
+  "Country": "Land of Nothing",
   "Phone": "248-835-5286"
+}
+
+###
+
+GET {{EmployeeManagerAPI_HostAddress}}/api/joblogs
+
+###
+
+POST {{EmployeeManagerAPI_HostAddress}}/api/employee
+Content-Type: application/json
+
+{
+  "Id": 2,
+  "Salary": 200000.00,
+  "Address": "1 Sunny Lane",
+  "City": "Happyville",
+  "Region": "The Joyful Mountains",
+  "PostalCode": "1234565",
+  "Country": "Laughland",
+  "Phone": "919-480-8482"
 }
 
 ###

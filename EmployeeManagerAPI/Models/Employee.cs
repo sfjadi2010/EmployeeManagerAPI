@@ -1,8 +1,11 @@
-﻿namespace EmployeeManagerAPI.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EmployeeManagerAPI.Models;
 
 public class Employee
 {
     public int Id { get; set; }
+    [Required(ErrorMessage = "Employee name is required")]
     public string Name { get; set; } = default!;
     public decimal Salary { get; set; }
     public string Address { get; set; } = default!;

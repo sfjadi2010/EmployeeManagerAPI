@@ -1,4 +1,5 @@
 using EmployeeManagerAPI.APIs;
+using EmployeeManagerAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +17,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<RequestResponseLoggingMiddleware>();
+app.UseMiddleware<CustomHeaderMiddleware>();
+app.UseMiddleware<RequestTimingMiddleware>();
+app.UseMiddleware<RequestBodyLoggingMiddleware>();
+
 // Map endpoints to the app
 app.MapGets();
 app.MapPosts();
 app.MapPuts();
 app.MapPatches();
 app.MapDeteles();
+
+app.MapJobLogEndpoints();
 
 app.Run();

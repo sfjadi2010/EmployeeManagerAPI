@@ -1,4 +1,5 @@
 ﻿using EmployeeManagerAPI.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace EmployeeManagerAPI.Services;
 
@@ -20,6 +21,14 @@ public static class EmployeeService
 
     public static void Create(Employee employee)
     {
+        var validationResult = new List<ValidationResult>();
+        var validationContext = new ValidationContext(employee);
+
+        if (!Validator.TryValidateObject(employee, validationContext, validationResult, true))
+        {
+            throw new ValidationException("Invalid employee data.");
+        }
+
         _employees.Add(employee);
     }
 
